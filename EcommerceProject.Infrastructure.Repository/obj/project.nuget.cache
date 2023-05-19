@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dj+5S/NuF2JhvYFNsTZOozLv+TNI8OsWy+X6Uol9UGkWyTy9bjzhYqs2DF8iqBsxJJBGVxQ6rSw+3Io4DFfBgw==",
+  "success": true,
+  "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512"
+  ],
+  "logs": []
+}
