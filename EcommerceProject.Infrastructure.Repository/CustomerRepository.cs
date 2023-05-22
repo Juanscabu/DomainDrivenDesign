@@ -15,7 +15,7 @@ namespace EcommerceProject.Infrastructure.Repository
             _connectionFactory = connectionFactory;
         }
 
-        #region async methods
+        #region sync methods
         public bool Insert(Customer customer)
         {
             using (var connection = _connectionFactory.GetConnection)
