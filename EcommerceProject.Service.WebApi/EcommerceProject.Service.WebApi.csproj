@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EcommerceProject.Application.Interface\EcommerceProject.Application.Interface.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Application.Main\EcommerceProject.Application.Main.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Infrastructure.Data\EcommerceProject.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Infrastructure.Repository\EcommerceProject.Infrastructure.Repository.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Transversal.Mapper\EcommerceProject.Transversal.Mapper.csproj" />
+  </ItemGroup>
+
+</Project>

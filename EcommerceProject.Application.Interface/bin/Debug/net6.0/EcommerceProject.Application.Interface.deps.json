@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EcommerceProject.Application.Interface/1.0.0": {
+        "dependencies": {
+          "EcommerceProject.Application.DTO": "1.0.0",
+          "EcommerceProject.Transversal.Common": "1.0.0"
+        },
+        "runtime": {
+          "EcommerceProject.Application.Interface.dll": {}
+        }
+      },
+      "EcommerceProject.Application.DTO/1.0.0": {
+        "runtime": {
+          "EcommerceProject.Application.DTO.dll": {}
+        }
+      },
+      "EcommerceProject.Transversal.Common/1.0.0": {
+        "runtime": {
+          "EcommerceProject.Transversal.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EcommerceProject.Application.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceProject.Application.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceProject.Transversal.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

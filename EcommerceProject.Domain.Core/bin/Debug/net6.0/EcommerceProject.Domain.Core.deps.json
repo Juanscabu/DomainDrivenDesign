@@ -1,0 +1,63 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EcommerceProject.Domain.Core/1.0.0": {
+        "dependencies": {
+          "EcommerceProject.Domain.Interface": "1.0.0",
+          "EcommerceProject.Infrastructure.Interface": "1.0.0"
+        },
+        "runtime": {
+          "EcommerceProject.Domain.Core.dll": {}
+        }
+      },
+      "EcommerceProject.Domain.Entity/1.0.0": {
+        "runtime": {
+          "EcommerceProject.Domain.Entity.dll": {}
+        }
+      },
+      "EcommerceProject.Domain.Interface/1.0.0": {
+        "dependencies": {
+          "EcommerceProject.Domain.Entity": "1.0.0"
+        },
+        "runtime": {
+          "EcommerceProject.Domain.Interface.dll": {}
+        }
+      },
+      "EcommerceProject.Infrastructure.Interface/1.0.0": {
+        "dependencies": {
+          "EcommerceProject.Domain.Entity": "1.0.0"
+        },
+        "runtime": {
+          "EcommerceProject.Infrastructure.Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EcommerceProject.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceProject.Domain.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceProject.Domain.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EcommerceProject.Infrastructure.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

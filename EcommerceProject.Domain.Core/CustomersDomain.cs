@@ -4,11 +4,11 @@ using EcommerceProject.Infrastructure.Interface;
 
 namespace EcommerceProject.Domain.Core
 {
-    public class CustomerDomain : ICustomersDomain
+    public class CustomersDomain : ICustomersDomain
     {
         private readonly ICustomersRepository _customerRepository;
 
-        public CustomerDomain(ICustomersRepository customerRepository)
+        public CustomersDomain(ICustomersRepository customerRepository)
         {
             _customerRepository = customerRepository;
         }
