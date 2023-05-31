@@ -1,5 +1,8 @@
 using EcommerceProject.Service.WebApi;
 using EcommerceProject.Service.WebApi.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 string myPolicy = "policyApiEcommerce";
@@ -10,17 +13,28 @@ var Configuration = new ConfigurationBuilder()
 
 builder.Services.RegisterServices();
 builder.Services.AddSingleton<IConfiguration>(Configuration);
-builder.Services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(Configuration["Config:OriginCors"])
+
+
+var appSettingsSection = Configuration.GetSection("Config");
+
+builder.Services.Configure<AppSettings>(appSettingsSection);
+
+var appsettings = appSettingsSection.Get<AppSettings>();
+
+
+builder.Services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(appsettings.OriginCors)
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
-var appSettingsSection = Configuration.GetSection("Config");
-builder.Services.Configure<AppSettings>(appSettingsSection);
+builder.Services.RegisterAuthentication(appsettings);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+
     app.UseSwaggerUI();
 }
 
