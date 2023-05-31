@@ -4,7 +4,6 @@ using EcommerceProject.Application.Interface;
 using EcommerceProject.Domain.Entity;
 using EcommerceProject.Domain.Interface;
 using EcommerceProject.Transversal.Common;
-using System.Collections.Generic;
 
 namespace EcommerceProject.Application.Main
 {

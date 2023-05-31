@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YCRIQ9BFLuy1VqvEwBX9NXQ8DKt9JmtXHy/rs2JdzL+Bjk9Bq9xfLTW1W2yfYhCBvvQdNQwoFcUK9ZYmAtbXfg==",
+  "dgSpecHash": "leuA2N3bt0KttaTMXYWUMauarphEEuKWR+4VxyP3ZFZctxggPpoKpu4X8lCkFq+G/SX+Fo41dv5rJFqgw/RIaA==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Interface\\EcommerceProject.Application.Interface.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

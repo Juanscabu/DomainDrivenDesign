@@ -23,6 +23,10 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped<ICustomersDomain, CustomersDomain>();
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersRepository, CustomerRepository>();
+            services.AddScoped<IUsersApplication, UsersApplication>();
+            services.AddScoped<IUsersDomain, UsersDomain>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
+
             return services;
         }
     }

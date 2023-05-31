@@ -1,4 +1,5 @@
 using EcommerceProject.Service.WebApi;
+using EcommerceProject.Service.WebApi.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 string myPolicy = "policyApiEcommerce";
@@ -12,6 +13,8 @@ builder.Services.AddSingleton<IConfiguration>(Configuration);
 builder.Services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(Configuration["Config:OriginCors"])
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
+var appSettingsSection = Configuration.GetSection("Config");
+builder.Services.Configure<AppSettings>(appSettingsSection);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -74,3 +74,8 @@ D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\obj\Debug\net6.0\EcommerceProject.Service.WebApi.pdb
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\obj\Debug\net6.0\EcommerceProject.Service.WebApi.genruntimeconfig.cache
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\obj\Debug\net6.0\ref\EcommerceProject.Service.WebApi.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

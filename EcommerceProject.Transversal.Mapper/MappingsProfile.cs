@@ -9,6 +9,7 @@ namespace EcommerceProject.Transversal.Mapper
         public MappingsProfile() 
         {
             CreateMap<Customer,CustomerDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
 
             //FIELDS WITH DIFFERENT NAME
             //CreateMap<Customer, CustomerDto>().ReverseMap()

@@ -35,6 +35,7 @@
       },
       "EcommerceProject.Application.Interface/1.0.0": {
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "EcommerceProject.Application.DTO": "1.0.0",
           "EcommerceProject.Transversal.Common": "1.0.0"
         },
