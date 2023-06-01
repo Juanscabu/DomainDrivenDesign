@@ -7,6 +7,7 @@ using EcommerceProject.Infrastructure.Interface;
 using EcommerceProject.Infrastructure.Repository;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Transversal.Common;
+using EcommerceProject.Transversal.Logging;
 using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,7 @@ namespace EcommerceProject.Service.WebApi
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddMvc();
             services.AddSingleton<IConnectionFactory, ConnectionFactory>();
             services.AddScoped<ICustomersDomain, CustomersDomain>();

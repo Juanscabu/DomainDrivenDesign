@@ -27,15 +27,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Domain.Int
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Domain.Core", "EcommerceProject.Domain.Core\EcommerceProject.Domain.Core.csproj", "{C714B128-77A5-4DB7-9168-4215C4DD6A2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Application.DTO", "EcommerceProject.Application.DTO\EcommerceProject.Application.DTO.csproj", "{A30A9D32-EDA4-4F31-9AD2-0A2CB5BBB379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Application.DTO", "EcommerceProject.Application.DTO\EcommerceProject.Application.DTO.csproj", "{A30A9D32-EDA4-4F31-9AD2-0A2CB5BBB379}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Transversal.Mapper", "EcommerceProject.Transversal.Mapper\EcommerceProject.Transversal.Mapper.csproj", "{6A3A7B09-F907-43C1-9DE6-ECC8819C14E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Transversal.Mapper", "EcommerceProject.Transversal.Mapper\EcommerceProject.Transversal.Mapper.csproj", "{6A3A7B09-F907-43C1-9DE6-ECC8819C14E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Application.Interface", "EcommerceProject.Application.Interface\EcommerceProject.Application.Interface.csproj", "{8F509722-4A35-453D-B299-BE885F651524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Application.Interface", "EcommerceProject.Application.Interface\EcommerceProject.Application.Interface.csproj", "{8F509722-4A35-453D-B299-BE885F651524}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Application.Main", "EcommerceProject.Application.Main\EcommerceProject.Application.Main.csproj", "{07EA041D-E86B-41AA-BF8E-44D250BA01E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Application.Main", "EcommerceProject.Application.Main\EcommerceProject.Application.Main.csproj", "{07EA041D-E86B-41AA-BF8E-44D250BA01E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Service.WebApi", "EcommerceProject.Service.WebApi\EcommerceProject.Service.WebApi.csproj", "{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceProject.Service.WebApi", "EcommerceProject.Service.WebApi\EcommerceProject.Service.WebApi.csproj", "{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceProject.Transversal.Logging", "EcommerceProject.Transversal.Logging\EcommerceProject.Transversal.Logging.csproj", "{30719DEA-0648-49AD-8312-CB5EE73B1436}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,10 @@ Global
 		{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30719DEA-0648-49AD-8312-CB5EE73B1436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30719DEA-0648-49AD-8312-CB5EE73B1436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30719DEA-0648-49AD-8312-CB5EE73B1436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30719DEA-0648-49AD-8312-CB5EE73B1436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{8F509722-4A35-453D-B299-BE885F651524} = {6C76ABFD-C041-4E54-BBF1-8E7E3B5D4A90}
 		{07EA041D-E86B-41AA-BF8E-44D250BA01E0} = {6C76ABFD-C041-4E54-BBF1-8E7E3B5D4A90}
 		{275CA68F-A6AD-42A8-87E0-2D21AB0AE86B} = {7C951FF1-7BFE-4628-BEF8-449302FAD9D5}
+		{30719DEA-0648-49AD-8312-CB5EE73B1436} = {C31D7892-BEA4-421E-9F03-9F31C71F66A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99438AC2-621A-4BAA-BD17-AB812A77FC9F}

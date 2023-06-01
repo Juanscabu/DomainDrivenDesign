@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -20,6 +20,7 @@
     <ProjectReference Include="..\EcommerceProject.Application.Main\EcommerceProject.Application.Main.csproj" />
     <ProjectReference Include="..\EcommerceProject.Infrastructure.Data\EcommerceProject.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\EcommerceProject.Infrastructure.Repository\EcommerceProject.Infrastructure.Repository.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Transversal.Logging\EcommerceProject.Transversal.Logging.csproj" />
     <ProjectReference Include="..\EcommerceProject.Transversal.Mapper\EcommerceProject.Transversal.Mapper.csproj" />
   </ItemGroup>
 

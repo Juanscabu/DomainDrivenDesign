@@ -11,11 +11,13 @@ namespace EcommerceProject.Application.Main
     {
         private readonly ICustomersDomain _customersDomain;
         private readonly IMapper _mapper;
+        private readonly IAppLogger<CustomersApplication> _logger;
 
-        public CustomersApplication(ICustomersDomain customersDomain, IMapper mapper) 
+        public CustomersApplication(ICustomersDomain customersDomain, IMapper mapper, IAppLogger<CustomersApplication> logger) 
         { 
             _customersDomain = customersDomain;
             _mapper = mapper;
+            _logger = logger;
         }
 
         #region sync methods
@@ -109,11 +111,13 @@ namespace EcommerceProject.Application.Main
                 {
                     response.IsSuccess = true;
                     response.Message = "Succesfull Query";
+                    _logger.LogInformation("Succesfull Query");
                 }
             }
             catch (Exception e)
             {
                 response.Message = e.Message;
+                _logger.LogError(e.Message);
             }
             return response;
         }

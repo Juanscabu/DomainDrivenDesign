@@ -82,3 +82,10 @@ D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\EcommerceProject.Transversal.Logging.dll
+D:\Proyectos\Arquitectura orientada al dominio\EcommerceProject\EcommerceProject.Service.WebApi\bin\Debug\net6.0\EcommerceProject.Transversal.Logging.pdb
