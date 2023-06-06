@@ -1,5 +1,6 @@
 ﻿using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface;
+using EcommerceProject.Domain.Entity;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Transversal.Common;
 using Microsoft.AspNetCore.Authorization;
@@ -13,27 +14,27 @@ using System.Text;
 namespace EcommerceProject.Service.WebApi.Controllers
 {
     [Authorize]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsersController : Controller
     {
         private readonly IUsersApplication _userApplication;
         private readonly AppSettings _appSettings;
 
-        public UsersController (IUsersApplication userApplication, IOptions<AppSettings> appSettings)
+        public UsersController(IUsersApplication userApplication, IOptions<AppSettings> appSettings)
         {
             _userApplication = userApplication;
             _appSettings = appSettings.Value;
         }
 
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost("Authenticate")]
         public IActionResult Authenticate([FromBody] UserDto authDto)
         {
-            var response = _userApplication.Authenticate(authDto.UserName,authDto.Password);
+            var response = _userApplication.Authenticate(authDto.UserName, authDto.Password);
             if (response.IsSuccess)
             {
-                if (response.Data != null) 
+                if (response.Data != null)
                 {
                     response.Data.Token = BuildToken(response);
                     return Ok(response);
@@ -57,7 +58,7 @@ namespace EcommerceProject.Service.WebApi.Controllers
                         new Claim(ClaimTypes.Name, userDto.Data.UserId.ToString())
                     }),
                 Expires = DateTime.UtcNow.AddMinutes(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
                 Issuer = _appSettings.Issuer,
                 Audience = _appSettings.Audience,
             };
@@ -65,5 +66,6 @@ namespace EcommerceProject.Service.WebApi.Controllers
             var tokenString = tokenHandler.WriteToken(token);
             return tokenString;
         }
+
     }
 }

@@ -1,8 +1,5 @@
 using EcommerceProject.Service.WebApi;
 using EcommerceProject.Service.WebApi.Helpers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 string myPolicy = "policyApiEcommerce";
@@ -26,6 +23,7 @@ builder.Services.AddCors(options => options.AddPolicy(myPolicy, builder => build
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
 builder.Services.RegisterAuthentication(appsettings);
+builder.Services.RegisterSwagger();
 
 
 var app = builder.Build();
@@ -35,13 +33,28 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
 
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AccountOwner API V1");
+    });
 }
 
 app.UseCors(myPolicy);
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+
+//docker image build -t ecommerce:1.0.0 -f ./EcommerceProject.Service.WebApi/Dockerfile .
+
+// docker container run --name ecommerce -d -p 5000
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllers();
+//}
+//);

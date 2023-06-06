@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x/pHM+ja4cpVOzNS3tfp9Z08zMzx8Jma08AxDcYtC0BArfceVvAhwCcOpwI+B6/Vb+TJ/PSgXAW39hYDGXcskw==",
+  "dgSpecHash": "aM19iPpULzF2rCcZxGD0eBO/nMzZHX4pkEiaWqqEO9TZzjSlNd7s2l9Qje6Pc0VPLPeLFtOWlq+OOd1rfXtt2A==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Service.WebApi\\EcommerceProject.Service.WebApi.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
