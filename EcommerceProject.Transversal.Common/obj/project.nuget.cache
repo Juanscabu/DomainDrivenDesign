@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uA1uYv97E+ptmSTwupInyo8NUWnOcmIOGGGaYRacS9wMuzXNEpVOzJ5amJ/xvOxva5EstQQCXJVMKznJyKAlsw==",
+  "dgSpecHash": "DsRzDi1B32FJWpoPefX+FxddY6kchnzVVReFKLSSo890nuqo73RJzug3JHTfbvjoTv5zYoMoi1t910rzND8j8g==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512"
+  ],
   "logs": []
 }

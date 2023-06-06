@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.Interface;
 using EcommerceProject.Application.Main;
+using EcommerceProject.Application.Validator;
 using EcommerceProject.Domain.Core;
 using EcommerceProject.Domain.Interface;
 using EcommerceProject.Infrastructure.Data;
@@ -11,10 +12,8 @@ using EcommerceProject.Transversal.Common;
 using EcommerceProject.Transversal.Logging;
 using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Security.Cryptography.Xml;
 using System.Text;
 
 namespace EcommerceProject.Service.WebApi
@@ -33,19 +32,12 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped<ICustomersRepository, CustomerRepository>();
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<IUsersDomain, UsersDomain>();
-            services.AddScoped<IUsersRepository, UsersRepository>();
-
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingsProfile());
-            });
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);          
+            services.AddScoped<IUsersRepository, UsersRepository>();                 
 
             return services;
         }
 
-        public static void RegisterSwagger(this IServiceCollection services)
+        public static void AddSwagger(this IServiceCollection services)
         {
             var securityScheme = new OpenApiSecurityScheme
             {
@@ -100,7 +92,7 @@ namespace EcommerceProject.Service.WebApi
             });
         }
 
-        public static void RegisterAuthentication(this IServiceCollection services, AppSettings appSettings)
+        public static void AddAuthentication(this IServiceCollection services, AppSettings appSettings)
         {
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             var Issuer = appSettings.Issuer;
@@ -145,6 +137,29 @@ namespace EcommerceProject.Service.WebApi
                         ClockSkew = TimeSpan.Zero
                     };
                 });
+        }
+
+        public static void AddMapper(this IServiceCollection services)
+        {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingsProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+        }
+
+        public static void AddFeature(this IServiceCollection services, AppSettings appSettings)
+        {
+            string myPolicy = "policyApiEcommerce";
+            services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(appSettings.OriginCors)
+                                                                                   .AllowAnyHeader()
+                                                                                   .AllowAnyMethod()));
+        }
+
+        public static void AddValidator(this IServiceCollection services)
+        {
+           services.AddTransient<UsersDtoValidator>();
         }
     }
 }

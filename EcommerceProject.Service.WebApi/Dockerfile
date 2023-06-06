@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+EXPOSE 80
 WORKDIR /src 
 ENV ASPNETCORE_ENVIRONMENT=Development
 ENV ASPNETCORE_URLS http://*:44319

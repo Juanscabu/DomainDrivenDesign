@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface;
+using EcommerceProject.Application.Validator;
 using EcommerceProject.Domain.Entity;
 using EcommerceProject.Domain.Interface;
 using EcommerceProject.Transversal.Common;
@@ -11,19 +12,23 @@ namespace EcommerceProject.Application.Main
     {
         private readonly IUsersDomain _userDomain;
         private readonly IMapper _mapper;
+        private readonly UsersDtoValidator _usersDtoValidator;
 
-        public UsersApplication(IUsersDomain userDomain, IMapper mapper)
+        public UsersApplication(IUsersDomain userDomain, IMapper mapper, UsersDtoValidator usersDtoValidator)
         {
             _userDomain = userDomain;
             _mapper = mapper;
+            _usersDtoValidator = usersDtoValidator
         }
 
         public Response<UserDto> Authenticate(string username, string password)
         {
             var response = new Response<UserDto>();
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            var validation = _usersDtoValidator.Validate(new UserDto() { UserName = username, Password = password });
+            if (!validation.IsValid)
             {
                 response.Message = "Parameters can not be null";
+                response.Errors = validation.Errors;
                 return response;
             }
 
