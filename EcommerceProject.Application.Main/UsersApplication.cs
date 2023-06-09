@@ -18,7 +18,7 @@ namespace EcommerceProject.Application.Main
         {
             _userDomain = userDomain;
             _mapper = mapper;
-            _usersDtoValidator = usersDtoValidator
+            _usersDtoValidator = usersDtoValidator;
         }
 
         public Response<UserDto> Authenticate(string username, string password)
@@ -37,12 +37,12 @@ namespace EcommerceProject.Application.Main
                 var user = _userDomain.Authenticate(username, password);
                 response.Data = _mapper.Map<UserDto>(user);
                 response.IsSuccess = true;
-                response.Message = "Succesfull Authentication";
+                response.Message = "Successfull Authentication";
             }
             catch (InvalidOperationException)
             {
                 response.IsSuccess = true;
-                response.Message = "Invalid Username";
+                response.Message = "Invalid Username or Password";
             }
             catch (Exception e)
             {
