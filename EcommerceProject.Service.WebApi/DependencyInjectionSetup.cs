@@ -8,12 +8,16 @@ using EcommerceProject.Infrastructure.Data;
 using EcommerceProject.Infrastructure.Interface;
 using EcommerceProject.Infrastructure.Repository;
 using EcommerceProject.Service.WebApi.Helpers;
+using EcommerceProject.Service.WebApi.Swagger;
 using EcommerceProject.Transversal.Common;
 using EcommerceProject.Transversal.Logging;
 using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Text;
 
 namespace EcommerceProject.Service.WebApi
@@ -39,6 +43,7 @@ namespace EcommerceProject.Service.WebApi
 
         public static void AddSwagger(this IServiceCollection services)
         {
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             var securityScheme = new OpenApiSecurityScheme
             {
                 Description = "Enter JWT Bearer",
@@ -55,25 +60,6 @@ namespace EcommerceProject.Service.WebApi
             };
             services.AddSwaggerGen(option =>
             {
-                option.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Ecommerce API",
-                    Description = "API made for a Domain Driven Design project",
-                    TermsOfService = new Uri("https://ecommerce.com/terms"),
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Juan Scabuzzo",
-                        Email = "Juanscabu@gmail.com",
-                        Url = new Uri("https://ecommerce.com/contact"),
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "Free Use",
-                        Url = new Uri("https://ecommerce.com/lisence")
-                    }
-
-                });
                 option.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
                 option.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
@@ -160,6 +146,30 @@ namespace EcommerceProject.Service.WebApi
         public static void AddValidator(this IServiceCollection services)
         {
            services.AddTransient<UsersDtoValidator>();
+        }
+
+        public static IServiceCollection AddVersioning(this IServiceCollection services)
+        {
+            services.AddApiVersioning(o =>
+            {
+                o.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.ReportApiVersions = true;
+                //Query String
+                //o.ApiVersionReader = new QueryStringApiVersionReader("api-version");
+                // Header
+                //o.ApiVersionReader = new HeaderApiVersionReader("x-version");
+                // URL
+                o.ApiVersionReader = new UrlSegmentApiVersionReader();
+            }); 
+
+            services.AddVersionedApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
+
+            return services;
         }
     }
 }

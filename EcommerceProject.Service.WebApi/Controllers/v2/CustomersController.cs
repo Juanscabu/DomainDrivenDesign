@@ -3,11 +3,12 @@ using EcommerceProject.Application.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceProject.Service.WebApi.Controllers
+namespace EcommerceProject.Service.WebApi.Controllers.v2
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("2.0")]
     public class CustomersController : Controller
     {
         private readonly ICustomersApplication _customerApplication;
@@ -23,7 +24,7 @@ namespace EcommerceProject.Service.WebApi.Controllers
         public IActionResult Insert([FromBody] CustomerDto customerDto)
         {
             if (customerDto == null)
-                return BadRequest(); 
+                return BadRequest();
 
             var response = _customerApplication.Insert(customerDto);
             if (response.IsSuccess)
@@ -31,13 +32,16 @@ namespace EcommerceProject.Service.WebApi.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpPut("Update")]
-        public IActionResult Update([FromBody] CustomerDto customerDto)
+        [HttpPut("Update/{customerId}")]
+        public IActionResult Update(string customerId, [FromBody] CustomerDto customersDto)
         {
+            var customerDto = _customerApplication.Get(customerId);
+            if (customerDto.Data == null)
+                return NotFound(customerDto.Message);
             if (customerDto == null)
                 return BadRequest();
 
-            var response = _customerApplication.Update(customerDto);
+            var response = _customerApplication.Update(customersDto);
             if (response.IsSuccess)
                 return Ok(response);
             return BadRequest(response.Message);
@@ -91,13 +95,16 @@ namespace EcommerceProject.Service.WebApi.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpPut("UpdateAsync")]
-        public async Task<IActionResult> UpdateAsync([FromBody] CustomerDto customerDto)
+        [HttpPut("UpdateAsync/{customerId}")]
+        public async Task<IActionResult> UpdateAsync(string customerId, [FromBody] CustomerDto customersDto)
         {
+            var customerDto = _customerApplication.Get(customerId);
+            if (customerDto.Data == null)
+                return NotFound(customerDto.Message);
             if (customerDto == null)
                 return BadRequest();
 
-            var response = await _customerApplication.UpdateAsync(customerDto);
+            var response = await _customerApplication.UpdateAsync(customersDto);
             if (response.IsSuccess)
                 return Ok(response);
             return BadRequest(response.Message);

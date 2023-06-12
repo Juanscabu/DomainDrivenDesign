@@ -1,5 +1,6 @@
 using EcommerceProject.Service.WebApi;
 using EcommerceProject.Service.WebApi.Helpers;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,6 @@ string myPolicy = "policyApiEcommerce";
 var Configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
-
 builder.Services.RegisterServices();
 builder.Services.AddSingleton<IConfiguration>(Configuration);
 
@@ -18,6 +18,7 @@ var appSettings = appSettingsSection.Get<AppSettings>();
 builder.Services.AddAuthentication(appSettings);
 builder.Services.AddFeature(appSettings);
 builder.Services.AddSwagger();
+builder.Services.AddVersioning();
 builder.Services.AddMapper();
 builder.Services.AddValidator();
 
@@ -27,19 +28,23 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
 
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AccountOwner API V1");
+        var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+        //builder a swagger endpoint for each discovered API Version
+        foreach (var description in provider.ApiVersionDescriptions)
+        {
+            c.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+        }
     });
 }
-
+//app.UseHttpsRedirection();
 app.UseCors(myPolicy);
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

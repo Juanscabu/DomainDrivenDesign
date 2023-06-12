@@ -1,6 +1,5 @@
 ﻿using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface;
-using EcommerceProject.Domain.Entity;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Transversal.Common;
 using Microsoft.AspNetCore.Authorization;
@@ -11,11 +10,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace EcommerceProject.Service.WebApi.Controllers
+namespace EcommerceProject.Service.WebApi.Controllers.v2
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("2.0")]
     public class UsersController : Controller
     {
         private readonly IUsersApplication _userApplication;
