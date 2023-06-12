@@ -1,5 +1,6 @@
 using EcommerceProject.Service.WebApi;
 using EcommerceProject.Service.WebApi.Helpers;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ builder.Services.AddSwagger();
 builder.Services.AddVersioning();
 builder.Services.AddMapper();
 builder.Services.AddValidator();
+//http://localhost:5000/healthchecks-ui#/healthchecks
+builder.Services.AddHealthCheck(Configuration);
 
 
 var app = builder.Build();
@@ -43,8 +46,19 @@ if (app.Environment.IsDevelopment())
 }
 //app.UseHttpsRedirection();
 app.UseCors(myPolicy);
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapHealthChecksUI();
+    endpoints.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+    {
+        Predicate = _ => true,
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
+});
 app.MapControllers();
 
 app.Run();

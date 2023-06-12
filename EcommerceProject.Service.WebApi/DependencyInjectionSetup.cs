@@ -7,6 +7,7 @@ using EcommerceProject.Domain.Interface;
 using EcommerceProject.Infrastructure.Data;
 using EcommerceProject.Infrastructure.Interface;
 using EcommerceProject.Infrastructure.Repository;
+using EcommerceProject.Service.WebApi.HealthCheck;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Service.WebApi.Swagger;
 using EcommerceProject.Transversal.Common;
@@ -171,5 +172,16 @@ namespace EcommerceProject.Service.WebApi
 
             return services;
         }
-    }
+
+        public static IServiceCollection AddHealthCheck(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddHealthChecks()
+                .AddSqlServer(configuration.GetConnectionString("NorthwindConnection"), tags: new[] { "database" })
+                .AddCheck<HealthCheckCustom>("healthCheckCustom", tags: new[] { "custom" });
+            services.AddHealthChecksUI().AddInMemoryStorage();
+            
+            return services;
+        }
+
+        }
 }
