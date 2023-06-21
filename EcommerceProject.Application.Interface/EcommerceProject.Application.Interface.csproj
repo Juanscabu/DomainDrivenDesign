@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -12,12 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceProject.Application.DTO\EcommerceProject.Application.DTO.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="EcommerceProject.Transversal.Common">
-      <HintPath>..\EcommerceProject.Transversal.Common\obj\Debug\net6.0\ref\EcommerceProject.Transversal.Common.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\EcommerceProject.Transversal.Common\EcommerceProject.Transversal.Common.csproj" />
   </ItemGroup>
 
 </Project>

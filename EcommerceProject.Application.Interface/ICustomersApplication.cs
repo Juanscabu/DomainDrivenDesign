@@ -15,6 +15,9 @@ namespace EcommerceProject.Application.Interface
         Response<CustomerDto>  Get(string customerId);
 
         Response<IEnumerable<CustomerDto>> GetAll();
+
+        ResponsePagination<IEnumerable<CustomerDto>> GetAllWithPagination(int pageNumber, int pageSize);
+
         #endregion
 
         #region async methods
@@ -27,6 +30,8 @@ namespace EcommerceProject.Application.Interface
         Task<Response<CustomerDto>> GetAsync(string customerId);
 
         Task<Response<IEnumerable<CustomerDto>>> GetAllAsync();
+
+        Task<ResponsePagination<IEnumerable<CustomerDto>>> GetAllWithPaginationAsync(int pageNumber, int pageSize);
         #endregion
     }
 }

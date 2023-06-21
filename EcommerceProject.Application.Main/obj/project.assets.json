@@ -85,7 +85,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "EcommerceProject.Application.DTO": "1.0.0"
+          "EcommerceProject.Application.DTO": "1.0.0",
+          "EcommerceProject.Transversal.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/EcommerceProject.Application.Interface.dll": {}

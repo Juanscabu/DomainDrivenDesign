@@ -14,6 +14,10 @@ namespace EcommerceProject.Domain.Interface
         Customer Get(string customerId);
 
         IEnumerable<Customer> GetAll();
+
+        IEnumerable<Customer> GetAllWithPagination(int PageNumber, int PageSize);
+
+        int Count();
         #endregion
 
         #region async methods
@@ -26,6 +30,10 @@ namespace EcommerceProject.Domain.Interface
         Task<Customer> GetAsync(string customerId);
 
         Task<IEnumerable<Customer>> GetAllAsync();
+
+        Task<IEnumerable<Customer>> GetAllWithPaginationAsync(int PageNumber, int PageSize);
+
+        Task<int> CountAsync();
         #endregion
     }
 }
