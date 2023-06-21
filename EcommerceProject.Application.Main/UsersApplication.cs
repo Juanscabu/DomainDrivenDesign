@@ -2,7 +2,6 @@
 using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface;
 using EcommerceProject.Application.Validator;
-using EcommerceProject.Domain.Entity;
 using EcommerceProject.Domain.Interface;
 using EcommerceProject.Transversal.Common;
 

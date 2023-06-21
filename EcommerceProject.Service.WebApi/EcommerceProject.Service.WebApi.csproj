@@ -32,4 +32,10 @@
     <ProjectReference Include="..\EcommerceProject.Transversal.Mapper\EcommerceProject.Transversal.Mapper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="EcommerceProject.Transversal.Common">
+      <HintPath>..\EcommerceProject.Transversal.Common\obj\Debug\net6.0\ref\EcommerceProject.Transversal.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

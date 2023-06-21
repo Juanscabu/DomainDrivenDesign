@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EcommerceProject.Infrastructure.Data\EcommerceProject.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\EcommerceProject.Infrastructure.Interface\EcommerceProject.Infrastructure.Interface.csproj" />
-    <ProjectReference Include="..\EcommerceProject.Transversal.Common\EcommerceProject.Transversal.Common.csproj" />
   </ItemGroup>
 
 </Project>

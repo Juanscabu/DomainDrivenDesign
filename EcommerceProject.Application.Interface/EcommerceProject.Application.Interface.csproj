@@ -12,7 +12,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceProject.Application.DTO\EcommerceProject.Application.DTO.csproj" />
-    <ProjectReference Include="..\EcommerceProject.Transversal.Common\EcommerceProject.Transversal.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EcommerceProject.Transversal.Common">
+      <HintPath>..\EcommerceProject.Transversal.Common\obj\Debug\net6.0\ref\EcommerceProject.Transversal.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

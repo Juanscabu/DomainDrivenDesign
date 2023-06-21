@@ -95,9 +95,6 @@
             "projectReferences": {
               "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj": {
                 "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj"
-              },
-              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
-                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
               }
             }
           }
@@ -174,6 +171,9 @@
               },
               "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Core\\EcommerceProject.Domain.Core.csproj": {
                 "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Core\\EcommerceProject.Domain.Core.csproj"
+              },
+              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
+                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
               }
             }
           }

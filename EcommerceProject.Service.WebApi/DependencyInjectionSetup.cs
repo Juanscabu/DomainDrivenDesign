@@ -31,7 +31,7 @@ namespace EcommerceProject.Service.WebApi
             services.AddEndpointsApiExplorer();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddMvc();
-            services.AddSingleton<IConnectionFactory, ConnectionFactory>();
+            services.AddSingleton<DapperContext>();
             services.AddScoped<ICustomersDomain, CustomersDomain>();
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersRepository, CustomerRepository>();

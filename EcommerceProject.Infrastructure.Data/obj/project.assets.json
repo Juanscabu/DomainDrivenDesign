@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "FluentValidation/11.5.2": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/FluentValidation.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/FluentValidation.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -233,46 +220,10 @@
             "rid": "win"
           }
         }
-      },
-      "EcommerceProject.Transversal.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "FluentValidation": "11.5.2"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Transversal.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Transversal.Common.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "FluentValidation/11.5.2": {
-      "sha512": "kj/hW/iusp2zq1Vt1YPLgDj6UG0DhoJXGkLwjLwm3j7vUtRF8DVA5vHJfItG3BxDjLWJUR2pvw8fK7rnuysZNA==",
-      "type": "package",
-      "path": "fluentvalidation/11.5.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "fluent-validation-icon.png",
-        "fluentvalidation.11.5.2.nupkg.sha512",
-        "fluentvalidation.nuspec",
-        "lib/net5.0/FluentValidation.dll",
-        "lib/net5.0/FluentValidation.xml",
-        "lib/net6.0/FluentValidation.dll",
-        "lib/net6.0/FluentValidation.xml",
-        "lib/net7.0/FluentValidation.dll",
-        "lib/net7.0/FluentValidation.xml",
-        "lib/netstandard2.0/FluentValidation.dll",
-        "lib/netstandard2.0/FluentValidation.xml",
-        "lib/netstandard2.1/FluentValidation.dll",
-        "lib/netstandard2.1/FluentValidation.xml"
-      ]
-    },
     "Microsoft.Extensions.Configuration/7.0.0": {
       "sha512": "tldQUBWt/xeH2K7/hMPPo5g8zuLc3Ro9I5d4o/XrxvxOCA2EZBtW7bCHHTc49fcBtvB8tLAb/Qsmfrq+2SJ4vA==",
       "type": "package",
@@ -691,16 +642,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "EcommerceProject.Transversal.Common/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Transversal.Common/EcommerceProject.Transversal.Common.csproj",
-      "msbuildProject": "../EcommerceProject.Transversal.Common/EcommerceProject.Transversal.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EcommerceProject.Transversal.Common >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
@@ -737,11 +682,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

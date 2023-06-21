@@ -95,9 +95,6 @@
             "projectReferences": {
               "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj": {
                 "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj"
-              },
-              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
-                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
               }
             }
           }
@@ -174,6 +171,9 @@
               },
               "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Core\\EcommerceProject.Domain.Core.csproj": {
                 "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Core\\EcommerceProject.Domain.Core.csproj"
+              },
+              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
+                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
               }
             }
           }
@@ -506,11 +506,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
-                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -645,11 +641,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Data\\EcommerceProject.Infrastructure.Data.csproj": {
+                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Data\\EcommerceProject.Infrastructure.Data.csproj"
+              },
               "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Interface\\EcommerceProject.Infrastructure.Interface.csproj": {
                 "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Interface\\EcommerceProject.Infrastructure.Interface.csproj"
-              },
-              "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
-                "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
               }
             }
           }

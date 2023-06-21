@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Rf5w43df9p7jmxflu+GAQteX4x8XnmdbuqqIDHQZpN+ftYLKuFyPP/2HCAdQolpirKZB4z2wkP7HhsLAU+D2Sg==",
+  "dgSpecHash": "7UYwOT8F2WlqqBrct+PwB12Y/asASY7NY6jOiVeTC6rDfWfuwJ7U6LuZuXUP6AjA4HPgWs/Nb/FqmS3YlUiUOQ==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Interface\\EcommerceProject.Application.Interface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
   ],
   "logs": []
