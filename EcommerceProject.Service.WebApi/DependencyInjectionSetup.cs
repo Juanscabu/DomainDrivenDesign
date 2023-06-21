@@ -37,7 +37,8 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped<ICustomersRepository, CustomerRepository>();
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<IUsersDomain, UsersDomain>();
-            services.AddScoped<IUsersRepository, UsersRepository>();                 
+            services.AddScoped<IUsersRepository, UsersRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
         }

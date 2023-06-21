@@ -6791,6 +6791,7 @@
       "EcommerceProject.Application.Main >= 1.0.0",
       "EcommerceProject.Infrastructure.Data >= 1.0.0",
       "EcommerceProject.Infrastructure.Repository >= 1.0.0",
+      "EcommerceProject.Transversal.Common >= 1.0.0",
       "EcommerceProject.Transversal.Logging >= 1.0.0",
       "EcommerceProject.Transversal.Mapper >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.16",
@@ -6846,6 +6847,9 @@
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj"
+            },
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Logging\\EcommerceProject.Transversal.Logging.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Logging\\EcommerceProject.Transversal.Logging.csproj"
