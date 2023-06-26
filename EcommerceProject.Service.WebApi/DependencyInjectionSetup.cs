@@ -20,6 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Text;
+using WatchDog;
 
 namespace EcommerceProject.Service.WebApi
 {
@@ -184,5 +185,19 @@ namespace EcommerceProject.Service.WebApi
             return services;
         }
 
+        public static IServiceCollection AddWatchDog(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddWatchDogServices(opt =>
+            {
+                opt.SetExternalDbConnString = configuration.GetConnectionString("NorthwindConnection");
+                opt.DbDriverOption = WatchDog.src.Enums.WatchDogDbDriverEnum.MSSQL;
+                opt.IsAutoClear = true;
+                opt.ClearTimeSchedule = WatchDog.src.Enums.WatchDogAutoClearScheduleEnum.Monthly;
+            });
+
+            return services;
+
         }
+
+    }
 }

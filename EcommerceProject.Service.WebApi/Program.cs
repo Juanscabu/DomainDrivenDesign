@@ -2,6 +2,7 @@ using EcommerceProject.Service.WebApi;
 using EcommerceProject.Service.WebApi.Helpers;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ builder.Services.AddMapper();
 builder.Services.AddValidator();
 //http://localhost:5000/healthchecks-ui#/healthchecks
 builder.Services.AddHealthCheck(Configuration);
+builder.Services.AddWatchDog(Configuration);
 
 
 var app = builder.Build();
@@ -45,10 +47,16 @@ if (app.Environment.IsDevelopment())
     });
 }
 //app.UseHttpsRedirection();
+app.UseWatchDogExceptionLogger();
 app.UseCors(myPolicy);
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseWatchDog(conf =>
+{
+    conf.WatchPageUsername = builder.Configuration["WatchDog:WatchPageUsername"];
+    conf.WatchPagePassword = builder.Configuration["WatchDog:WatchPagePassword"];
+});
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
@@ -60,7 +68,6 @@ app.UseEndpoints(endpoints =>
     });
 });
 app.MapControllers();
-
 app.Run();
 
 
