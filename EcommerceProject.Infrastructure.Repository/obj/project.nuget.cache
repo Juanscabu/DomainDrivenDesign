@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jSFcUVZUyQyRLyeoXf7EkpqjSGMW7l4QzGfUstINzmYSCn+HBHZ4jo/jIxu18EqHC9VHUAYOb+IdStQgGLeO2Q==",
+  "dgSpecHash": "wawSOl6MaJS4nTbm6Jv0G4vMEWM8JRgHYdIsW+PBN/hrpO09KgtjTOpjRw4rYpJGkL8fqoGfUvtYwd2DHt0kwA==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\dapper\\2.0.143\\dapper.2.0.143.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
@@ -17,7 +17,10 @@
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.19\\microsoft.windowsdesktop.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.19\\microsoft.netcore.app.ref.6.0.19.nupkg.sha512",
+    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.19\\microsoft.aspnetcore.app.ref.6.0.19.nupkg.sha512"
   ],
   "logs": []
 }
