@@ -19,6 +19,7 @@ builder.Services.AddHealthCheck(builder.Configuration);
 builder.Services.AddWatchDog(builder.Configuration);
 //http://localhost:8001/redis-stack/browser
 builder.Services.AddRedisCache(builder.Configuration);
+builder.Services.AddRateLimiting(builder.Configuration);
 
 
 var app = builder.Build();
@@ -45,6 +46,7 @@ app.UseCors("policyApiEcommerce");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseRateLimiter();
 app.UseEndpoints(endpoints => { });
 app.MapControllers();
 app.MapHealthChecksUI();

@@ -1,11 +1,12 @@
-﻿using EcommerceProject.Application.DTO;
-using EcommerceProject.Application.Interface;
+﻿using EcommerceProject.Application.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace EcommerceProject.Service.WebApi.Controllers.v2
 {
     [Authorize]
+    [EnableRateLimiting("fixedWindow")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("2.0")]

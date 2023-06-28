@@ -15,6 +15,7 @@ using EcommerceProject.Transversal.Logging;
 using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -215,6 +216,24 @@ namespace EcommerceProject.Service.WebApi
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = configuration.GetConnectionString("RedisConnection");
+            });
+
+            return services;
+        }
+
+        public static IServiceCollection AddRateLimiting(this IServiceCollection services, IConfiguration configuration)
+        {
+            var fixedWindowPolicy = "fixedWindow";
+            services.AddRateLimiter(configureOptions =>
+            {
+            configureOptions.AddFixedWindowLimiter(policyName: fixedWindowPolicy, fixedWindow =>
+            {
+                fixedWindow.PermitLimit = int.Parse(configuration["RateLimiting:PermitLimit"]);
+                fixedWindow.Window = TimeSpan.FromSeconds(int.Parse(configuration["RateLimiting:Window"]));
+                fixedWindow.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+                fixedWindow.QueueLimit = int.Parse(configuration["RateLimiting:QueueLimit"]);
+            });
+            configureOptions.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
             });
 
             return services;
