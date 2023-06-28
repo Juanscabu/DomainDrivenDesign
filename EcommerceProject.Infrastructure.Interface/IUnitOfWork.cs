@@ -10,5 +10,6 @@ namespace EcommerceProject.Infrastructure.Interface
     {
         ICustomersRepository Customers { get; }
         IUsersRepository Users { get; }
+        ICategoriesRepository Categories { get; }
     }
 }

@@ -39,6 +39,9 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<IUsersDomain, UsersDomain>();
             services.AddScoped<IUsersRepository, UsersRepository>();
+            services.AddScoped<ICategoriesApplication, CategoriesApplication>();
+            services.AddScoped<ICategoriesDomain, CategoriesDomain>();
+            services.AddScoped<ICategoriesRepository, CategoriesRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
@@ -81,11 +84,16 @@ namespace EcommerceProject.Service.WebApi
             });
         }
 
-        public static void AddAuthentication(this IServiceCollection services, AppSettings appSettings)
+        public static void AddAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
+            var appSettingsSection = configuration.GetSection("Config");
+            services.Configure<AppSettings>(appSettingsSection);
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             var Issuer = appSettings.Issuer;
             var Audience = appSettings.Audience;
+
 
             services.AddAuthentication(x =>
             {
@@ -138,9 +146,12 @@ namespace EcommerceProject.Service.WebApi
             services.AddSingleton(mapper);
         }
 
-        public static void AddFeature(this IServiceCollection services, AppSettings appSettings)
+        public static void AddFeature(this IServiceCollection services, IConfiguration configuration)
         {
             string myPolicy = "policyApiEcommerce";
+            var appSettingsSection = configuration.GetSection("Config");
+            services.Configure<AppSettings>(appSettingsSection);
+            var appSettings = appSettingsSection.Get<AppSettings>();
             services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(appSettings.OriginCors)
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
@@ -179,6 +190,7 @@ namespace EcommerceProject.Service.WebApi
         {
             services.AddHealthChecks()
                 .AddSqlServer(configuration.GetConnectionString("NorthwindConnection"), tags: new[] { "database" })
+                .AddRedis(configuration.GetConnectionString("RedisConnection"), tags: new[] { "Cache" })
                 .AddCheck<HealthCheckCustom>("healthCheckCustom", tags: new[] { "custom" });
             services.AddHealthChecksUI().AddInMemoryStorage();
             
@@ -196,7 +208,16 @@ namespace EcommerceProject.Service.WebApi
             });
 
             return services;
+        }
 
+        public static IServiceCollection AddRedisCache(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration.GetConnectionString("RedisConnection");
+            });
+
+            return services;
         }
 
     }

@@ -1,31 +1,24 @@
 using EcommerceProject.Service.WebApi;
-using EcommerceProject.Service.WebApi.Helpers;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string myPolicy = "policyApiEcommerce";
-var Configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
 builder.Services.RegisterServices();
-builder.Services.AddSingleton<IConfiguration>(Configuration);
-
-var appSettingsSection = Configuration.GetSection("Config");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-var appSettings = appSettingsSection.Get<AppSettings>();
-
-builder.Services.AddAuthentication(appSettings);
-builder.Services.AddFeature(appSettings);
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddAuthentication(builder.Configuration);
+builder.Services.AddFeature(builder.Configuration);
 builder.Services.AddSwagger();
 builder.Services.AddVersioning();
 builder.Services.AddMapper();
 builder.Services.AddValidator();
 //http://localhost:5000/healthchecks-ui#/healthchecks
-builder.Services.AddHealthCheck(Configuration);
-builder.Services.AddWatchDog(Configuration);
+builder.Services.AddHealthCheck(builder.Configuration);
+//http://localhost:5000/watchdog
+builder.Services.AddWatchDog(builder.Configuration);
+//http://localhost:8001/redis-stack/browser
+builder.Services.AddRedisCache(builder.Configuration);
 
 
 var app = builder.Build();
@@ -46,37 +39,24 @@ if (app.Environment.IsDevelopment())
         }
     });
 }
-//app.UseHttpsRedirection();
+
 app.UseWatchDogExceptionLogger();
-app.UseCors(myPolicy);
+app.UseCors("policyApiEcommerce");
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseEndpoints(endpoints => { });
+app.MapControllers();
+app.MapHealthChecksUI();
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 app.UseWatchDog(conf =>
 {
     conf.WatchPageUsername = builder.Configuration["WatchDog:WatchPageUsername"];
     conf.WatchPagePassword = builder.Configuration["WatchDog:WatchPagePassword"];
 });
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-    endpoints.MapHealthChecksUI();
-    endpoints.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
-    {
-        Predicate = _ => true,
-        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-    });
-});
-app.MapControllers();
+
 app.Run();
-
-
-//docker image build -t ecommerce:1.0.0 -f ./EcommerceProject.Service.WebApi/Dockerfile .
-
-// docker container run --name ecommerce -d -p 5000
-
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers();
-//}
-//);

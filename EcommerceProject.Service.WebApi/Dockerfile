@@ -12,4 +12,3 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /src/EcommerceProject.Service.WebApi/out ./
 ENTRYPOINT ["dotnet", "EcommerceProject.Service.WebApi.dll"]
-
