@@ -24,19 +24,6 @@
         "runtime": {
           "bin/placeholder/EcommerceProject.Domain.Interface.dll": {}
         }
-      },
-      "EcommerceProject.Infrastructure.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "EcommerceProject.Domain.Entity": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Interface.dll": {}
-        }
       }
     }
   },
@@ -50,17 +37,11 @@
       "type": "project",
       "path": "../EcommerceProject.Domain.Interface/EcommerceProject.Domain.Interface.csproj",
       "msbuildProject": "../EcommerceProject.Domain.Interface/EcommerceProject.Domain.Interface.csproj"
-    },
-    "EcommerceProject.Infrastructure.Interface/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Infrastructure.Interface/EcommerceProject.Infrastructure.Interface.csproj",
-      "msbuildProject": "../EcommerceProject.Infrastructure.Interface/EcommerceProject.Infrastructure.Interface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EcommerceProject.Domain.Interface >= 1.0.0",
-      "EcommerceProject.Infrastructure.Interface >= 1.0.0"
+      "EcommerceProject.Domain.Interface >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -98,9 +79,6 @@
           "projectReferences": {
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Interface\\EcommerceProject.Domain.Interface.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Interface\\EcommerceProject.Domain.Interface.csproj"
-            },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Interface\\EcommerceProject.Infrastructure.Interface.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Interface\\EcommerceProject.Infrastructure.Interface.csproj"
             }
           }
         }

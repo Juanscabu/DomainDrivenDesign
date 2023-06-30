@@ -50,6 +50,16 @@
           "bin/placeholder/EcommerceProject.Application.DTO.dll": {}
         }
       },
+      "EcommerceProject.Domain.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+        }
+      },
       "EcommerceProject.Transversal.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -178,6 +188,11 @@
       "path": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj",
       "msbuildProject": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj"
     },
+    "EcommerceProject.Domain.Entity/1.0.0": {
+      "type": "project",
+      "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj",
+      "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj"
+    },
     "EcommerceProject.Transversal.Common/1.0.0": {
       "type": "project",
       "path": "../EcommerceProject.Transversal.Common/EcommerceProject.Transversal.Common.csproj",
@@ -188,6 +203,7 @@
     "net6.0": [
       "AutoMapper >= 12.0.1",
       "EcommerceProject.Application.DTO >= 1.0.0",
+      "EcommerceProject.Domain.Entity >= 1.0.0",
       "EcommerceProject.Transversal.Common >= 1.0.0"
     ]
   },
@@ -226,6 +242,9 @@
           "projectReferences": {
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj"
+            },
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.Entity.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.Entity.csproj"
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"

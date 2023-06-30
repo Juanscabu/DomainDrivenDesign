@@ -4806,12 +4806,30 @@
           "bin/placeholder/EcommerceProject.Application.DTO.dll": {}
         }
       },
+      "EcommerceProject.Application.Feature/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "EcommerceProject.Application.Interface": "1.0.0",
+          "EcommerceProject.Application.Validator": "1.0.0",
+          "EcommerceProject.Transversal.Common": "1.0.0",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "7.0.8"
+        },
+        "compile": {
+          "bin/placeholder/EcommerceProject.Application.Feature.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EcommerceProject.Application.Feature.dll": {}
+        }
+      },
       "EcommerceProject.Application.Interface/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
           "EcommerceProject.Application.DTO": "1.0.0",
+          "EcommerceProject.Domain.Entity": "1.0.0",
           "EcommerceProject.Transversal.Common": "1.0.0"
         },
         "compile": {
@@ -4819,24 +4837,6 @@
         },
         "runtime": {
           "bin/placeholder/EcommerceProject.Application.Interface.dll": {}
-        }
-      },
-      "EcommerceProject.Application.Main/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "AutoMapper": "12.0.1",
-          "EcommerceProject.Application.Interface": "1.0.0",
-          "EcommerceProject.Application.Validator": "1.0.0",
-          "EcommerceProject.Domain.Core": "1.0.0",
-          "EcommerceProject.Transversal.Common": "1.0.0",
-          "Microsoft.Extensions.Caching.StackExchangeRedis": "7.0.8"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Application.Main.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Application.Main.dll": {}
         }
       },
       "EcommerceProject.Application.Validator/1.0.0": {
@@ -4854,20 +4854,6 @@
           "bin/placeholder/EcommerceProject.Application.Validator.dll": {}
         }
       },
-      "EcommerceProject.Domain.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "EcommerceProject.Domain.Interface": "1.0.0",
-          "EcommerceProject.Infrastructure.Interface": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Domain.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Domain.Core.dll": {}
-        }
-      },
       "EcommerceProject.Domain.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4878,20 +4864,7 @@
           "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
         }
       },
-      "EcommerceProject.Domain.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "EcommerceProject.Domain.Entity": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Domain.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Domain.Interface.dll": {}
-        }
-      },
-      "EcommerceProject.Infrastructure.Data/1.0.0": {
+      "EcommerceProject.Persistence.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -4899,38 +4872,25 @@
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Data.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Data.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.Data.dll": {}
         }
       },
-      "EcommerceProject.Infrastructure.Interface/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "EcommerceProject.Domain.Entity": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Interface.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Interface.dll": {}
-        }
-      },
-      "EcommerceProject.Infrastructure.Repository/1.0.0": {
+      "EcommerceProject.Persistence.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Dapper": "2.0.143",
-          "EcommerceProject.Infrastructure.Data": "1.0.0",
-          "EcommerceProject.Infrastructure.Interface": "1.0.0"
+          "EcommerceProject.Application.Interface": "1.0.0",
+          "EcommerceProject.Persistence.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Repository.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.Repository.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EcommerceProject.Infrastructure.Repository.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.Repository.dll": {}
         }
       },
       "EcommerceProject.Transversal.Common/1.0.0": {
@@ -13042,50 +13002,35 @@
       "path": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj",
       "msbuildProject": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj"
     },
+    "EcommerceProject.Application.Feature/1.0.0": {
+      "type": "project",
+      "path": "../EcommerceProject.Application.Main/EcommerceProject.Application.Feature.csproj",
+      "msbuildProject": "../EcommerceProject.Application.Main/EcommerceProject.Application.Feature.csproj"
+    },
     "EcommerceProject.Application.Interface/1.0.0": {
       "type": "project",
       "path": "../EcommerceProject.Application.Interface/EcommerceProject.Application.Interface.csproj",
       "msbuildProject": "../EcommerceProject.Application.Interface/EcommerceProject.Application.Interface.csproj"
-    },
-    "EcommerceProject.Application.Main/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Application.Main/EcommerceProject.Application.Main.csproj",
-      "msbuildProject": "../EcommerceProject.Application.Main/EcommerceProject.Application.Main.csproj"
     },
     "EcommerceProject.Application.Validator/1.0.0": {
       "type": "project",
       "path": "../EcommerceProject.Application.Validator/EcommerceProject.Application.Validator.csproj",
       "msbuildProject": "../EcommerceProject.Application.Validator/EcommerceProject.Application.Validator.csproj"
     },
-    "EcommerceProject.Domain.Core/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Domain.Core/EcommerceProject.Domain.Core.csproj",
-      "msbuildProject": "../EcommerceProject.Domain.Core/EcommerceProject.Domain.Core.csproj"
-    },
     "EcommerceProject.Domain.Entity/1.0.0": {
       "type": "project",
       "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj",
       "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj"
     },
-    "EcommerceProject.Domain.Interface/1.0.0": {
+    "EcommerceProject.Persistence.Data/1.0.0": {
       "type": "project",
-      "path": "../EcommerceProject.Domain.Interface/EcommerceProject.Domain.Interface.csproj",
-      "msbuildProject": "../EcommerceProject.Domain.Interface/EcommerceProject.Domain.Interface.csproj"
+      "path": "../EcommerceProject.Persistence.Data/EcommerceProject.Persistence.Data.csproj",
+      "msbuildProject": "../EcommerceProject.Persistence.Data/EcommerceProject.Persistence.Data.csproj"
     },
-    "EcommerceProject.Infrastructure.Data/1.0.0": {
+    "EcommerceProject.Persistence.Repository/1.0.0": {
       "type": "project",
-      "path": "../EcommerceProject.Infrastructure.Data/EcommerceProject.Infrastructure.Data.csproj",
-      "msbuildProject": "../EcommerceProject.Infrastructure.Data/EcommerceProject.Infrastructure.Data.csproj"
-    },
-    "EcommerceProject.Infrastructure.Interface/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Infrastructure.Interface/EcommerceProject.Infrastructure.Interface.csproj",
-      "msbuildProject": "../EcommerceProject.Infrastructure.Interface/EcommerceProject.Infrastructure.Interface.csproj"
-    },
-    "EcommerceProject.Infrastructure.Repository/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Infrastructure.Repository/EcommerceProject.Infrastructure.Repository.csproj",
-      "msbuildProject": "../EcommerceProject.Infrastructure.Repository/EcommerceProject.Infrastructure.Repository.csproj"
+      "path": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.Repository.csproj",
+      "msbuildProject": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.Repository.csproj"
     },
     "EcommerceProject.Transversal.Common/1.0.0": {
       "type": "project",
@@ -13112,10 +13057,9 @@
       "AspNetCore.HealthChecks.UI.InMemory.Storage >= 6.0.5",
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "EcommerceProject.Application.Feature >= 1.0.0",
       "EcommerceProject.Application.Interface >= 1.0.0",
-      "EcommerceProject.Application.Main >= 1.0.0",
-      "EcommerceProject.Infrastructure.Data >= 1.0.0",
-      "EcommerceProject.Infrastructure.Repository >= 1.0.0",
+      "EcommerceProject.Persistence.Repository >= 1.0.0",
       "EcommerceProject.Transversal.Common >= 1.0.0",
       "EcommerceProject.Transversal.Logging >= 1.0.0",
       "EcommerceProject.Transversal.Mapper >= 1.0.0",
@@ -13165,14 +13109,11 @@
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Interface\\EcommerceProject.Application.Interface.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Interface\\EcommerceProject.Application.Interface.csproj"
             },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Main.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Main.csproj"
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Feature.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Feature.csproj"
             },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Data\\EcommerceProject.Infrastructure.Data.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Data\\EcommerceProject.Infrastructure.Data.csproj"
-            },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Infrastructure.Repository\\EcommerceProject.Infrastructure.Repository.csproj"
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.Repository.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.Repository.csproj"
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"

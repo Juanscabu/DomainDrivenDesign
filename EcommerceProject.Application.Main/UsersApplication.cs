@@ -1,21 +1,21 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.DTO;
-using EcommerceProject.Application.Interface;
+using EcommerceProject.Application.Interface.Features;
+using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
-using EcommerceProject.Domain.Interface;
 using EcommerceProject.Transversal.Common;
 
-namespace EcommerceProject.Application.Main
+namespace EcommerceProject.Feature.Main
 {
     public class UsersApplication : IUsersApplication
     {
-        private readonly IUsersDomain _userDomain;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly UsersDtoValidator _usersDtoValidator;
 
-        public UsersApplication(IUsersDomain userDomain, IMapper mapper, UsersDtoValidator usersDtoValidator)
+        public UsersApplication(IUnitOfWork unitOfWork, IMapper mapper, UsersDtoValidator usersDtoValidator)
         {
-            _userDomain = userDomain;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
             _usersDtoValidator = usersDtoValidator;
         }
@@ -33,7 +33,7 @@ namespace EcommerceProject.Application.Main
 
             try
             {
-                var user = _userDomain.Authenticate(username, password);
+                var user = _unitOfWork.Users.Authenticate(username, password);
                 response.Data = _mapper.Map<UserDto>(user);
                 response.IsSuccess = true;
                 response.Message = "Successfull Authentication";

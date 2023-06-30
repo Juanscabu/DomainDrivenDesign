@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LKtGOO6SmRGYeXea4N8E5h4FWEAFHXk/FVRwl5AP+UyvLer6nDbqZ5y36iBr0mGUKmeaj1RkuxI7O4PHT8JzmA==",
+  "dgSpecHash": "0DgZWop0DOaHcefxUTyM8rdPfc+wb1DoN0ahbH9wdnAlI3fMYupnsuzlCDmYHS8HUOBet/1bFyy7O0SIwLj3hw==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Core\\EcommerceProject.Domain.Core.csproj",
   "expectedPackageFiles": [

@@ -1,5 +1,5 @@
 using AutoMapper;
-using EcommerceProject.Application.Interface;
+using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Main;
 using EcommerceProject.Application.Validator;
 using EcommerceProject.Domain.Entity;

@@ -1,4 +1,4 @@
-﻿using EcommerceProject.Application.Interface;
+﻿using EcommerceProject.Application.Interface.Features;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;

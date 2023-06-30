@@ -1,25 +1,25 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.DTO;
-using EcommerceProject.Application.Interface;
-using EcommerceProject.Domain.Interface;
+using EcommerceProject.Application.Interface.Features;
+using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Transversal.Common;
 using Microsoft.Extensions.Caching.Distributed;
 using System.Text;
 using System.Text.Json;
 
-namespace EcommerceProject.Application.Main
+namespace EcommerceProject.Feature.Main
 {
     public class CategoriesApplication : ICategoriesApplication
     {
-        private readonly ICategoriesDomain _categoriesDomain;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IAppLogger<CustomersApplication> _logger;
         private readonly IDistributedCache _distributedCache;
 
-        public CategoriesApplication(ICategoriesDomain categoriesDomain, IMapper mapper, IAppLogger<CustomersApplication> logger
+        public CategoriesApplication(IUnitOfWork unitOfWork, IMapper mapper, IAppLogger<CustomersApplication> logger
             ,IDistributedCache distributedCache)
         {
-            _categoriesDomain = categoriesDomain;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
             _distributedCache = distributedCache;
@@ -39,7 +39,7 @@ namespace EcommerceProject.Application.Main
                 } 
                 else
                 {
-                    var categories = await _categoriesDomain.GetAll();
+                    var categories = await _unitOfWork.Categories.GetAll();
                     response.Data = _mapper.Map<IEnumerable<CategoryDto>>(categories);
                     if (response.Data != null)
                     {

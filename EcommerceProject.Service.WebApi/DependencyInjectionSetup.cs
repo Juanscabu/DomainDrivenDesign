@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using EcommerceProject.Application.Interface;
-using EcommerceProject.Application.Main;
+using EcommerceProject.Application.Interface.Features;
+using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
-using EcommerceProject.Domain.Core;
-using EcommerceProject.Domain.Interface;
-using EcommerceProject.Infrastructure.Data;
-using EcommerceProject.Infrastructure.Interface;
-using EcommerceProject.Infrastructure.Repository;
+using EcommerceProject.Feature.Main;
+using EcommerceProject.Persistence.Data;
+using EcommerceProject.Persistence.Repository;
 using EcommerceProject.Service.WebApi.HealthCheck;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Service.WebApi.Swagger;
@@ -34,14 +32,11 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddMvc();
             services.AddSingleton<DapperContext>();
-            services.AddScoped<ICustomersDomain, CustomersDomain>();
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersRepository, CustomerRepository>();
             services.AddScoped<IUsersApplication, UsersApplication>();
-            services.AddScoped<IUsersDomain, UsersDomain>();
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<ICategoriesApplication, CategoriesApplication>();
-            services.AddScoped<ICategoriesDomain, CategoriesDomain>();
             services.AddScoped<ICategoriesRepository, CategoriesRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
