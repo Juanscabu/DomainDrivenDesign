@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "75lMeTGqafNapYwG5ySddzhL+85YY7znmvomBgXUThkFCM81DlpARHnzso5OnOTzVwwaly4OKXbSjxjNopNA1A==",
+  "dgSpecHash": "veOMxjX/fp7kdr1zsxmxNYps9Q/4BlVeh4PamShyrauIt0F3sDrq3zhFCKz9/3GfAVlp2JfLRTO5ZqMM2KlgaQ==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Service.WebApi\\EcommerceProject.Service.WebApi.csproj",
   "expectedPackageFiles": [

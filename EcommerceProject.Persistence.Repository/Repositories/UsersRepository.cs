@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Domain.Entity;
-using EcommerceProject.Persistence.Data;
+using EcommerceProject.Persistence.Contexts;
 using System.Data;
 
-namespace EcommerceProject.Persistence.Repository
+namespace EcommerceProject.Persistence.Repositories
 {
     public class UsersRepository : IUsersRepository
     {
@@ -23,9 +23,9 @@ namespace EcommerceProject.Persistence.Repository
                 parameters.Add("Username", username);
                 parameters.Add("Password", password);
 
-                var user = connection.QuerySingle<User>(query,param: parameters, commandType: CommandType.StoredProcedure);
+                var user = connection.QuerySingle<User>(query, param: parameters, commandType: CommandType.StoredProcedure);
                 return user;
             }
+        }
     }
-}
 }

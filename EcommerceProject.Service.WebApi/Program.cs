@@ -6,6 +6,8 @@ using WatchDog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.RegisterServices();
+builder.Services.AddPersistenceServices(); 
+builder.Services.AddApplicationServices();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddFeature(builder.Configuration);

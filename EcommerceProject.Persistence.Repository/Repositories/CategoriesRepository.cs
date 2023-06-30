@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Domain.Entity;
-using EcommerceProject.Persistence.Data;
+using EcommerceProject.Persistence.Contexts;
 using System.Data;
 
-namespace EcommerceProject.Persistence.Repository
+namespace EcommerceProject.Persistence.Repositories
 {
     public class CategoriesRepository : ICategoriesRepository
     {

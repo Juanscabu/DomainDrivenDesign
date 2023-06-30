@@ -4864,33 +4864,20 @@
           "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
         }
       },
-      "EcommerceProject.Persistence.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "7.0.0",
-          "System.Data.SqlClient": "4.8.5"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Persistence.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Persistence.Data.dll": {}
-        }
-      },
-      "EcommerceProject.Persistence.Repository/1.0.0": {
+      "EcommerceProject.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Dapper": "2.0.143",
           "EcommerceProject.Application.Interface": "1.0.0",
-          "EcommerceProject.Persistence.Data": "1.0.0"
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
-          "bin/placeholder/EcommerceProject.Persistence.Repository.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EcommerceProject.Persistence.Repository.dll": {}
+          "bin/placeholder/EcommerceProject.Persistence.dll": {}
         }
       },
       "EcommerceProject.Transversal.Common/1.0.0": {
@@ -13022,15 +13009,10 @@
       "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj",
       "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj"
     },
-    "EcommerceProject.Persistence.Data/1.0.0": {
+    "EcommerceProject.Persistence/1.0.0": {
       "type": "project",
-      "path": "../EcommerceProject.Persistence.Data/EcommerceProject.Persistence.Data.csproj",
-      "msbuildProject": "../EcommerceProject.Persistence.Data/EcommerceProject.Persistence.Data.csproj"
-    },
-    "EcommerceProject.Persistence.Repository/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.Repository.csproj",
-      "msbuildProject": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.Repository.csproj"
+      "path": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.csproj",
+      "msbuildProject": "../EcommerceProject.Persistence.Repository/EcommerceProject.Persistence.csproj"
     },
     "EcommerceProject.Transversal.Common/1.0.0": {
       "type": "project",
@@ -13059,7 +13041,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "EcommerceProject.Application.Feature >= 1.0.0",
       "EcommerceProject.Application.Interface >= 1.0.0",
-      "EcommerceProject.Persistence.Repository >= 1.0.0",
+      "EcommerceProject.Persistence >= 1.0.0",
       "EcommerceProject.Transversal.Common >= 1.0.0",
       "EcommerceProject.Transversal.Logging >= 1.0.0",
       "EcommerceProject.Transversal.Mapper >= 1.0.0",
@@ -13112,8 +13094,8 @@
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Feature.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.Main\\EcommerceProject.Application.Feature.csproj"
             },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.Repository.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.Repository.csproj"
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Persistence.Repository\\EcommerceProject.Persistence.csproj"
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Common\\EcommerceProject.Transversal.Common.csproj"

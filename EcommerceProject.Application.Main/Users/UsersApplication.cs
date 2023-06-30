@@ -5,7 +5,7 @@ using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
 using EcommerceProject.Transversal.Common;
 
-namespace EcommerceProject.Feature.Main
+namespace EcommerceProject.Application.Feature.Users
 {
     public class UsersApplication : IUsersApplication
     {

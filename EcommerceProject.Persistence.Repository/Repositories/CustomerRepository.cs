@@ -1,10 +1,10 @@
 ﻿using Dapper;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Domain.Entity;
-using EcommerceProject.Persistence.Data;
+using EcommerceProject.Persistence.Contexts;
 using System.Data;
 
-namespace EcommerceProject.Persistence.Repository
+namespace EcommerceProject.Persistence.Repositories
 {
     public class CustomerRepository : ICustomersRepository
     {
@@ -19,7 +19,7 @@ namespace EcommerceProject.Persistence.Repository
         public bool Insert(Customer customer)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersInsert";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customer.CustomerId);
@@ -41,7 +41,7 @@ namespace EcommerceProject.Persistence.Repository
         public bool Update(Customer customer)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersUpdate";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customer.CustomerId);
@@ -63,7 +63,7 @@ namespace EcommerceProject.Persistence.Repository
         public bool Delete(string customerId)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersDelete";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customerId);
@@ -74,7 +74,7 @@ namespace EcommerceProject.Persistence.Repository
         public Customer Get(string customerId)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersGetById";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customerId);
@@ -85,7 +85,7 @@ namespace EcommerceProject.Persistence.Repository
         public IEnumerable<Customer> GetAll()
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersList";
 
             var customer = connection.Query<Customer>(query, commandType: CommandType.StoredProcedure);
@@ -95,23 +95,23 @@ namespace EcommerceProject.Persistence.Repository
         public IEnumerable<Customer> GetAllWithPagination(int pageNumber, int pageSize)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersListWithPagination";
             var parameters = new DynamicParameters();
             parameters.Add("PageNumber", pageNumber);
             parameters.Add("PageSize", pageSize);
-            var customer = connection.Query<Customer>(query,param: parameters, commandType: CommandType.StoredProcedure);
+            var customer = connection.Query<Customer>(query, param: parameters, commandType: CommandType.StoredProcedure);
             return customer;
         }
 
         public int Count()
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "Select Count(*) From Customers";
-                
-            var count  = connection.ExecuteScalar<int>(query, commandType: CommandType.Text);
-            return count;         
+
+            var count = connection.ExecuteScalar<int>(query, commandType: CommandType.Text);
+            return count;
         }
 
         #endregion
@@ -120,7 +120,7 @@ namespace EcommerceProject.Persistence.Repository
         public async Task<bool> InsertAsync(Customer customer)
         {
             using var connection = _context.CreateConnection();
-         
+
             var query = "CustomersInsert";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customer.CustomerId);
@@ -136,13 +136,13 @@ namespace EcommerceProject.Persistence.Repository
             parameters.Add("Fax", customer.Fax);
 
             var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
-            return result > 0;           
+            return result > 0;
         }
 
         public async Task<bool> UpdateAsync(Customer customer)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersUpdate";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customer.CustomerId);
@@ -158,42 +158,42 @@ namespace EcommerceProject.Persistence.Repository
             parameters.Add("Fax", customer.Fax);
 
             var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
-            return result > 0;           
+            return result > 0;
         }
 
         public async Task<bool> DeleteAsync(string customerId)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersDelete";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customerId);
             var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
-            return result > 0;           
+            return result > 0;
         }
 
         public async Task<Customer> GetAsync(string customerId)
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersGetById";
             var parameters = new DynamicParameters();
             parameters.Add("CustomerId", customerId);
             var customer = await connection.QuerySingleAsync<Customer>(query, param: parameters, commandType: CommandType.StoredProcedure);
-            return customer;            
+            return customer;
         }
 
         public async Task<IEnumerable<Customer>> GetAllAsync()
         {
             using var connection = _context.CreateConnection();
-            
+
             var query = "CustomersList";
 
             var customer = await connection.QueryAsync<Customer>(query, commandType: CommandType.StoredProcedure);
-            return customer; 
+            return customer;
         }
 
-       
+
 
         public Task<IEnumerable<Customer>> GetAllWithPaginationAsync(int pageNumber, int pageSize)
         {

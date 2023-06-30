@@ -1,6 +1,6 @@
 ﻿using EcommerceProject.Application.Interface.Persistence;
 
-namespace EcommerceProject.Persistence.Repository
+namespace EcommerceProject.Persistence.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -19,7 +19,7 @@ namespace EcommerceProject.Persistence.Repository
 
         public void Dispose()
         {
-            System.GC.SuppressFinalize(this);
+            GC.SuppressFinalize(this);
         }
     }
 }

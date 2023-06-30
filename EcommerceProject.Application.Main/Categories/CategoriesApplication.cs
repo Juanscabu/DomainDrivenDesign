@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.DTO;
+using EcommerceProject.Application.Feature.Customers;
 using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Transversal.Common;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using System.Text;
 using System.Text.Json;
 
-namespace EcommerceProject.Feature.Main
+namespace EcommerceProject.Application.Feature.Categories
 {
     public class CategoriesApplication : ICategoriesApplication
     {
@@ -17,7 +18,7 @@ namespace EcommerceProject.Feature.Main
         private readonly IDistributedCache _distributedCache;
 
         public CategoriesApplication(IUnitOfWork unitOfWork, IMapper mapper, IAppLogger<CustomersApplication> logger
-            ,IDistributedCache distributedCache)
+            , IDistributedCache distributedCache)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -33,10 +34,10 @@ namespace EcommerceProject.Feature.Main
             {
                 var redisCategories = await _distributedCache.GetAsync(cacheKey);
 
-                if (redisCategories != null) 
+                if (redisCategories != null)
                 {
                     response.Data = JsonSerializer.Deserialize<IEnumerable<CategoryDto>>(redisCategories);
-                } 
+                }
                 else
                 {
                     var categories = await _unitOfWork.Categories.GetAll();
@@ -48,10 +49,10 @@ namespace EcommerceProject.Feature.Main
                             .SetAbsoluteExpiration(DateTime.Now.AddHours(8))
                             .SetSlidingExpiration(TimeSpan.FromMinutes(60));
 
-                        await _distributedCache.SetAsync(cacheKey, serializedCategories,options);
+                        await _distributedCache.SetAsync(cacheKey, serializedCategories, options);
                     }
                 }
-                if (response.Data != null) 
+                if (response.Data != null)
                 {
                     response.IsSuccess = true;
                     response.Message = "Succesfull Categories Retrieval";

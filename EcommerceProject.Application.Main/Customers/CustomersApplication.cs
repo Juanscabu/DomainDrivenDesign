@@ -5,7 +5,7 @@ using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Domain.Entity;
 using EcommerceProject.Transversal.Common;
 
-namespace EcommerceProject.Feature.Main
+namespace EcommerceProject.Application.Feature.Customers
 {
     public class CustomersApplication : ICustomersApplication
     {
@@ -13,7 +13,7 @@ namespace EcommerceProject.Feature.Main
         private readonly IMapper _mapper;
         private readonly IAppLogger<CustomersApplication> _logger;
 
-        public CustomersApplication(IUnitOfWork unitOfWork, IMapper mapper, IAppLogger<CustomersApplication> logger) 
+        public CustomersApplication(IUnitOfWork unitOfWork, IMapper mapper, IAppLogger<CustomersApplication> logger)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
@@ -21,7 +21,7 @@ namespace EcommerceProject.Feature.Main
         }
 
         #region sync methods
-        public Response<bool> Insert(CustomerDto customerDto) 
+        public Response<bool> Insert(CustomerDto customerDto)
         {
             var response = new Response<bool>();
             try
@@ -102,7 +102,7 @@ namespace EcommerceProject.Feature.Main
 
         public Response<IEnumerable<CustomerDto>> GetAll()
         {
-            var response = new Response<IEnumerable<CustomerDto>> ();
+            var response = new Response<IEnumerable<CustomerDto>>();
             try
             {
                 var customers = _unitOfWork.Customers.GetAll();

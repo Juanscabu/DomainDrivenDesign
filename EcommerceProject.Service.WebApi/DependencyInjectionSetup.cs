@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using EcommerceProject.Application.Feature.Categories;
+using EcommerceProject.Application.Feature.Customers;
+using EcommerceProject.Application.Feature.Users;
 using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
-using EcommerceProject.Feature.Main;
-using EcommerceProject.Persistence.Data;
-using EcommerceProject.Persistence.Repository;
+using EcommerceProject.Persistence.Contexts;
+using EcommerceProject.Persistence.Repositories;
 using EcommerceProject.Service.WebApi.HealthCheck;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Service.WebApi.Swagger;
@@ -31,14 +33,26 @@ namespace EcommerceProject.Service.WebApi
             services.AddEndpointsApiExplorer();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             services.AddMvc();
+
+            return services;
+        }
+
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+        {
             services.AddSingleton<DapperContext>();
-            services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<ICustomersRepository, CustomerRepository>();
-            services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<IUsersRepository, UsersRepository>();
-            services.AddScoped<ICategoriesApplication, CategoriesApplication>();
             services.AddScoped<ICategoriesRepository, CategoriesRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddScoped<ICustomersApplication, CustomersApplication>();
+            services.AddScoped<IUsersApplication, UsersApplication>();
+            services.AddScoped<ICategoriesApplication, CategoriesApplication>();
 
             return services;
         }
