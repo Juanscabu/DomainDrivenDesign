@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using EcommerceProject.Application.Interface.Persistence;
-using EcommerceProject.Domain.Entity;
+using EcommerceProject.Domain.Entities;
 using EcommerceProject.Persistence.Contexts;
 using System.Data;
 

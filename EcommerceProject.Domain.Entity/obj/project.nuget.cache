@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tU4WfOXwuIkbRuTzVoehtlBMIVs6xyNVnMG9Qaib7eOdWZyfyzbY7nMjRTBT9usG0ncSSrEwE5sOZ1EKoAFbEw==",
+  "dgSpecHash": "gvmyTw5Ejee8ulImSb+47oZhv6d8P66RqlzOzjnzgA6UnnLlSqbjQuOXZw0IWAUFGmLWgkaxWOyF3hKrBIPfEg==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.Entity.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.19\\microsoft.windowsdesktop.app.ref.6.0.19.nupkg.sha512",
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.19\\microsoft.netcore.app.ref.6.0.19.nupkg.sha512",
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.19\\microsoft.aspnetcore.app.ref.6.0.19.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

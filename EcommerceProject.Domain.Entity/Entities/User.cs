@@ -1,4 +1,4 @@
-﻿namespace EcommerceProject.Domain.Entity
+﻿namespace EcommerceProject.Domain.Entities
 {
     public class User
     {

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -29,7 +29,7 @@
       },
       "EcommerceProject.Application.DTO/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/EcommerceProject.Application.DTO.dll": {}
         },
@@ -37,14 +37,14 @@
           "bin/placeholder/EcommerceProject.Application.DTO.dll": {}
         }
       },
-      "EcommerceProject.Domain.Entity/1.0.0": {
+      "EcommerceProject.Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+          "bin/placeholder/EcommerceProject.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+          "bin/placeholder/EcommerceProject.Domain.dll": {}
         }
       }
     }
@@ -139,17 +139,17 @@
       "path": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj",
       "msbuildProject": "../EcommerceProject.Application.DTO/EcommerceProject.Application.DTO.csproj"
     },
-    "EcommerceProject.Domain.Entity/1.0.0": {
+    "EcommerceProject.Domain/1.0.0": {
       "type": "project",
-      "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj",
-      "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj"
+      "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.csproj",
+      "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "AutoMapper >= 12.0.1",
       "EcommerceProject.Application.DTO >= 1.0.0",
-      "EcommerceProject.Domain.Entity >= 1.0.0"
+      "EcommerceProject.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -174,7 +174,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -182,14 +182,14 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Application.DTO\\EcommerceProject.Application.DTO.csproj"
             },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.Entity.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.Entity.csproj"
+            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.csproj": {
+              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Domain.Entity\\EcommerceProject.Domain.csproj"
             }
           }
         }
@@ -201,8 +201,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
@@ -220,20 +220,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.19, 6.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.19, 6.0.19]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.19, 6.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceProject.Application.Main\EcommerceProject.Application.Feature.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Domain.Entity\EcommerceProject.Domain.Entity.csproj" />
   </ItemGroup>
 
 </Project>

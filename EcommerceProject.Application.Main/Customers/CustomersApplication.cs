@@ -2,7 +2,7 @@
 using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Interface.Persistence;
-using EcommerceProject.Domain.Entity;
+using EcommerceProject.Domain.Entities;
 using EcommerceProject.Transversal.Common;
 
 namespace EcommerceProject.Application.Feature.Customers

@@ -1,4 +1,4 @@
-﻿using EcommerceProject.Domain.Entity;
+﻿using EcommerceProject.Domain.Entities;
 
 namespace EcommerceProject.Application.Interface.Persistence
 {

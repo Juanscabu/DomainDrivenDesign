@@ -1,20 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.8" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\EcommerceProject.Application.Interface\EcommerceProject.Application.Interface.csproj" />
     <ProjectReference Include="..\EcommerceProject.Application.Validator\EcommerceProject.Application.Validator.csproj" />
     <ProjectReference Include="..\EcommerceProject.Transversal.Common\EcommerceProject.Transversal.Common.csproj" />
   </ItemGroup>
-
 </Project>

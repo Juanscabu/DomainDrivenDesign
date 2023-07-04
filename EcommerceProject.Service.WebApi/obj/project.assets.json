@@ -2393,13 +2393,6 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.18.1": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
-          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
-        }
-      },
       "Microsoft.Win32.Registry/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -4798,7 +4791,7 @@
       },
       "EcommerceProject.Application.DTO/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/EcommerceProject.Application.DTO.dll": {}
         },
@@ -4808,7 +4801,7 @@
       },
       "EcommerceProject.Application.Feature/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
           "EcommerceProject.Application.Interface": "1.0.0",
@@ -4825,11 +4818,11 @@
       },
       "EcommerceProject.Application.Interface/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
           "EcommerceProject.Application.DTO": "1.0.0",
-          "EcommerceProject.Domain.Entity": "1.0.0",
+          "EcommerceProject.Domain": "1.0.0",
           "EcommerceProject.Transversal.Common": "1.0.0"
         },
         "compile": {
@@ -4841,7 +4834,7 @@
       },
       "EcommerceProject.Application.Validator/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "EcommerceProject.Application.DTO": "1.0.0",
           "FluentValidation": "11.5.2",
@@ -4854,19 +4847,19 @@
           "bin/placeholder/EcommerceProject.Application.Validator.dll": {}
         }
       },
-      "EcommerceProject.Domain.Entity/1.0.0": {
+      "EcommerceProject.Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+          "bin/placeholder/EcommerceProject.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EcommerceProject.Domain.Entity.dll": {}
+          "bin/placeholder/EcommerceProject.Domain.dll": {}
         }
       },
       "EcommerceProject.Persistence/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Dapper": "2.0.143",
           "EcommerceProject.Application.Interface": "1.0.0",
@@ -4882,7 +4875,7 @@
       },
       "EcommerceProject.Transversal.Common/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "FluentValidation": "11.5.2"
         },
@@ -4910,11 +4903,11 @@
       },
       "EcommerceProject.Transversal.Mapper/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
           "EcommerceProject.Application.DTO": "1.0.0",
-          "EcommerceProject.Domain.Entity": "1.0.0"
+          "EcommerceProject.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/EcommerceProject.Transversal.Mapper.dll": {}
@@ -7618,87 +7611,6 @@
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.xml",
         "microsoft.rest.clientruntime.2.3.10.nupkg.sha512",
         "microsoft.rest.clientruntime.nuspec"
-      ]
-    },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.18.1": {
-      "sha512": "RtNQEQQ/bgaxzrsZEkPB+/DFaUgNiq8GtZz/R4lt+mKXPcEvEuawlbl0PB1s7ND9kvkUVZtMphPxE9Ma1VGiFg==",
-      "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.18.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CHANGELOG.md",
-        "EULA.md",
-        "ThirdPartyNotices.txt",
-        "build/Container.props",
-        "build/Container.targets",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets",
-        "build/Rules/GeneralBrowseObject.xaml",
-        "build/Rules/cs-CZ/GeneralBrowseObject.xaml",
-        "build/Rules/de-DE/GeneralBrowseObject.xaml",
-        "build/Rules/es-ES/GeneralBrowseObject.xaml",
-        "build/Rules/fr-FR/GeneralBrowseObject.xaml",
-        "build/Rules/it-IT/GeneralBrowseObject.xaml",
-        "build/Rules/ja-JP/GeneralBrowseObject.xaml",
-        "build/Rules/ko-KR/GeneralBrowseObject.xaml",
-        "build/Rules/pl-PL/GeneralBrowseObject.xaml",
-        "build/Rules/pt-BR/GeneralBrowseObject.xaml",
-        "build/Rules/ru-RU/GeneralBrowseObject.xaml",
-        "build/Rules/tr-TR/GeneralBrowseObject.xaml",
-        "build/Rules/zh-CN/GeneralBrowseObject.xaml",
-        "build/Rules/zh-TW/GeneralBrowseObject.xaml",
-        "build/ToolsTarget.props",
-        "build/ToolsTarget.targets",
-        "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
-        "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Tasks.dll",
-        "tools/Newtonsoft.Json.dll",
-        "tools/System.Security.Principal.Windows.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/utils/KillProcess.exe",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
       ]
     },
     "Microsoft.Win32.Registry/5.0.0": {
@@ -13004,10 +12916,10 @@
       "path": "../EcommerceProject.Application.Validator/EcommerceProject.Application.Validator.csproj",
       "msbuildProject": "../EcommerceProject.Application.Validator/EcommerceProject.Application.Validator.csproj"
     },
-    "EcommerceProject.Domain.Entity/1.0.0": {
+    "EcommerceProject.Domain/1.0.0": {
       "type": "project",
-      "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj",
-      "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.Entity.csproj"
+      "path": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.csproj",
+      "msbuildProject": "../EcommerceProject.Domain.Entity/EcommerceProject.Domain.csproj"
     },
     "EcommerceProject.Persistence/1.0.0": {
       "type": "project",
@@ -13048,7 +12960,6 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.8",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.1.0",
       "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer >= 5.1.0",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.18.1",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "System.Configuration.ConfigurationManager >= 7.0.0",
       "System.IdentityModel.Tokens.Jwt >= 6.31.0"
@@ -13158,10 +13069,6 @@
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
             "target": "Package",
             "version": "[5.1.0, )"
-          },
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-            "target": "Package",
-            "version": "[1.18.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "veOMxjX/fp7kdr1zsxmxNYps9Q/4BlVeh4PamShyrauIt0F3sDrq3zhFCKz9/3GfAVlp2JfLRTO5ZqMM2KlgaQ==",
+  "dgSpecHash": "w4ddQCUGDcy97lkUefT9w4Tz2Fx8ZWAp3t8iHkA8jJ/ykWEAU/2kGYBRL62OgJO78NMY/VUQSszXH2tc4Z8iSQ==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Service.WebApi\\EcommerceProject.Service.WebApi.csproj",
   "expectedPackageFiles": [
@@ -142,7 +142,6 @@
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.packaging.tools\\1.0.0-preview1-25301-01\\microsoft.packaging.tools.1.0.0-preview1-25301-01.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.10\\microsoft.rest.clientruntime.2.3.10.nupkg.sha512",
-    "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Juan Scabuzzo\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
