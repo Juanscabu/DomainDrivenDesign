@@ -1,6 +1,5 @@
 ﻿using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface.Features;
-using EcommerceProject.Domain.Entity;
 using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Transversal.Common;
 using Microsoft.AspNetCore.Authorization;

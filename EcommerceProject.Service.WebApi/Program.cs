@@ -6,7 +6,11 @@ using WatchDog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.RegisterServices();
-builder.Services.AddPersistenceServices(); 
+//Create Entity Framework Migration
+//dotnet ef migrations add CreateInitialScheme --project EcommerceProject.Persistence --startup-project EcommerceProject.Service.WebApi --output-dir Migrations --context ApplicationDbContext
+//Update Database
+//dotnet ef database update --project EcommerceProject.Persistence --startup-project EcommerceProject.Service.WebApi --context ApplicationDbContext
+builder.Services.AddPersistenceServices(builder.Configuration); 
 builder.Services.AddApplicationServices();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);

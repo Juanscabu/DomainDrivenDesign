@@ -6,6 +6,7 @@ using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
 using EcommerceProject.Persistence.Contexts;
+using EcommerceProject.Persistence.Interceptors;
 using EcommerceProject.Persistence.Repositories;
 using EcommerceProject.Service.WebApi.HealthCheck;
 using EcommerceProject.Service.WebApi.Helpers;
@@ -16,6 +17,7 @@ using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -37,12 +39,17 @@ namespace EcommerceProject.Service.WebApi
             return services;
         }
 
-        public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<DapperContext>();
-            services.AddScoped<ICustomersRepository, CustomerRepository>();
+            services.AddScoped<AuditableEntitySaveChangesInterceptor>();
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(configuration.GetConnectionString("NorthwindConnection"),
+            builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+            services.AddScoped<ICustomersRepository, CustomersRepository>();
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<ICategoriesRepository, CategoriesRepository>();
+            services.AddScoped<IDiscountRepository, DiscountsRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
