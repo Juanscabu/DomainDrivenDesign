@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.Feature.Categories;
 using EcommerceProject.Application.Feature.Customers;
+using EcommerceProject.Application.Feature.Discounts;
 using EcommerceProject.Application.Feature.Users;
 using EcommerceProject.Application.Interface.Features;
 using EcommerceProject.Application.Interface.Persistence;
@@ -13,7 +14,6 @@ using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Service.WebApi.Swagger;
 using EcommerceProject.Transversal.Common;
 using EcommerceProject.Transversal.Logging;
-using EcommerceProject.Transversal.Mapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.RateLimiting;
@@ -22,6 +22,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
 using System.Text;
 using WatchDog;
 
@@ -57,9 +58,14 @@ namespace EcommerceProject.Service.WebApi
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<ICategoriesApplication, CategoriesApplication>();
+            services.AddScoped<IDiscountsApplication, DiscountsApplication>();
+            
+            services.AddTransient<UsersDtoValidator>();
+            services.AddTransient<DiscountDtoValidator>();
 
             return services;
         }
@@ -153,16 +159,6 @@ namespace EcommerceProject.Service.WebApi
                 });
         }
 
-        public static void AddMapper(this IServiceCollection services)
-        {
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingsProfile());
-            });
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);
-        }
-
         public static void AddFeature(this IServiceCollection services, IConfiguration configuration)
         {
             string myPolicy = "policyApiEcommerce";
@@ -172,11 +168,6 @@ namespace EcommerceProject.Service.WebApi
             services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(appSettings.OriginCors)
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
-        }
-
-        public static void AddValidator(this IServiceCollection services)
-        {
-           services.AddTransient<UsersDtoValidator>();
         }
 
         public static IServiceCollection AddVersioning(this IServiceCollection services)

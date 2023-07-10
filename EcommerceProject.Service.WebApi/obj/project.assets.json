@@ -5175,21 +5175,6 @@
         "runtime": {
           "bin/placeholder/EcommerceProject.Transversal.Logging.dll": {}
         }
-      },
-      "EcommerceProject.Transversal.Mapper/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "AutoMapper": "12.0.1",
-          "EcommerceProject.Application.DTO": "1.0.0",
-          "EcommerceProject.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/EcommerceProject.Transversal.Mapper.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/EcommerceProject.Transversal.Mapper.dll": {}
-        }
       }
     }
   },
@@ -13576,11 +13561,6 @@
       "type": "project",
       "path": "../EcommerceProject.Transversal.Logging/EcommerceProject.Transversal.Logging.csproj",
       "msbuildProject": "../EcommerceProject.Transversal.Logging/EcommerceProject.Transversal.Logging.csproj"
-    },
-    "EcommerceProject.Transversal.Mapper/1.0.0": {
-      "type": "project",
-      "path": "../EcommerceProject.Transversal.Mapper/EcommerceProject.Transversal.Mapper.csproj",
-      "msbuildProject": "../EcommerceProject.Transversal.Mapper/EcommerceProject.Transversal.Mapper.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13597,7 +13577,6 @@
       "EcommerceProject.Persistence >= 1.0.0",
       "EcommerceProject.Transversal.Common >= 1.0.0",
       "EcommerceProject.Transversal.Logging >= 1.0.0",
-      "EcommerceProject.Transversal.Mapper >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.8",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.1.0",
       "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer >= 5.1.0",
@@ -13656,9 +13635,6 @@
             },
             "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Logging\\EcommerceProject.Transversal.Logging.csproj": {
               "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Logging\\EcommerceProject.Transversal.Logging.csproj"
-            },
-            "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Mapper\\EcommerceProject.Transversal.Mapper.csproj": {
-              "projectPath": "D:\\Proyectos\\Arquitectura orientada al dominio\\EcommerceProject\\EcommerceProject.Transversal.Mapper\\EcommerceProject.Transversal.Mapper.csproj"
             }
           }
         }

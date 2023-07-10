@@ -2,7 +2,6 @@
 using EcommerceProject.Domain.Entities;
 using EcommerceProject.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
 
 namespace EcommerceProject.Persistence.Repositories
 {
