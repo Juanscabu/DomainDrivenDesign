@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.DTO;
 using EcommerceProject.Application.Interface.Features;
+using EcommerceProject.Application.Interface.Infrastructure;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
 using EcommerceProject.Domain.Entities;
+using EcommerceProject.Domain.Events;
 using EcommerceProject.Transversal.Common;
 using System.Collections.Generic;
 
@@ -13,13 +15,15 @@ namespace EcommerceProject.Application.Feature.Discounts
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IEventBus _eventBus;
         private readonly DiscountDtoValidator _discountDtoValidator;
 
-        public DiscountsApplication(IUnitOfWork unitOfWork, IMapper mapper, DiscountDtoValidator discountDtoValidator)
+        public DiscountsApplication(IUnitOfWork unitOfWork, IMapper mapper, DiscountDtoValidator discountDtoValidator, IEventBus eventBus)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _discountDtoValidator = discountDtoValidator;
+            _eventBus = eventBus;
         }
 
         public async Task<Response<bool>> Create(DiscountDto discountDto, CancellationToken cancellationToken = default)
@@ -42,6 +46,10 @@ namespace EcommerceProject.Application.Feature.Discounts
                 {
                     response.IsSuccess = true;
                     response.Message = "Succesfull Registry";
+
+                    //Event Publisher
+                    var discountCreatedEvent = _mapper.Map<DiscountCreatedEvent>(discount);
+                    _eventBus.Publish(discountCreatedEvent);
                 }
             }
             catch (Exception e)

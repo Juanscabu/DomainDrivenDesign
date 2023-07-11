@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EcommerceProject.Application.Interface\EcommerceProject.Application.Interface.csproj" />
     <ProjectReference Include="..\EcommerceProject.Application.Main\EcommerceProject.Application.Feature.csproj" />
+    <ProjectReference Include="..\EcommerceProject.Infrastructure\EcommerceProject.Infrastructure.csproj" />
     <ProjectReference Include="..\EcommerceProject.Persistence\EcommerceProject.Persistence.csproj" />
     <ProjectReference Include="..\EcommerceProject.Transversal.Common\EcommerceProject.Transversal.Common.csproj" />
     <ProjectReference Include="..\EcommerceProject.Transversal.Logging\EcommerceProject.Transversal.Logging.csproj" />

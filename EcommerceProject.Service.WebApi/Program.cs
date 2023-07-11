@@ -12,6 +12,7 @@ builder.Services.RegisterServices();
 //dotnet ef database update --project EcommerceProject.Persistence --startup-project EcommerceProject.Service.WebApi --context ApplicationDbContext
 builder.Services.AddPersistenceServices(builder.Configuration); 
 builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddFeature(builder.Configuration);

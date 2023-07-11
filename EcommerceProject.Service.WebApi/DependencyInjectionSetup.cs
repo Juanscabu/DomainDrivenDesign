@@ -5,8 +5,11 @@ using EcommerceProject.Application.Feature.Customers;
 using EcommerceProject.Application.Feature.Discounts;
 using EcommerceProject.Application.Feature.Users;
 using EcommerceProject.Application.Interface.Features;
+using EcommerceProject.Application.Interface.Infrastructure;
 using EcommerceProject.Application.Interface.Persistence;
 using EcommerceProject.Application.Validator;
+using EcommerceProject.Infrastructure.EventBus;
+using EcommerceProject.Infrastructure.Options;
 using EcommerceProject.Persistence.Contexts;
 using EcommerceProject.Persistence.Interceptors;
 using EcommerceProject.Persistence.Repositories;
@@ -15,6 +18,7 @@ using EcommerceProject.Service.WebApi.Helpers;
 using EcommerceProject.Service.WebApi.Swagger;
 using EcommerceProject.Transversal.Common;
 using EcommerceProject.Transversal.Logging;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.AspNetCore.RateLimiting;
@@ -64,9 +68,33 @@ namespace EcommerceProject.Service.WebApi
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<ICategoriesApplication, CategoriesApplication>();
             services.AddScoped<IDiscountsApplication, DiscountsApplication>();
-            
+
             services.AddTransient<UsersDtoValidator>();
             services.AddTransient<DiscountDtoValidator>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+        {
+            services.ConfigureOptions<RabbitMqOptionsSetup>();
+            services.AddScoped<IEventBus, EventBusRabbitMQ>();
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    RabbitMqOptions? opt = services.BuildServiceProvider()
+                        .GetRequiredService<IOptions<RabbitMqOptions>>()
+                        .Value;
+                    cfg.Host(opt.HostName, opt.VirtualHost, h =>
+                    {
+                        h.Username(opt.UserName);
+                        h.Password(opt.Password);
+                    });
+
+                    cfg.ConfigureEndpoints(context);
+                });
+            });
 
             return services;
         }
