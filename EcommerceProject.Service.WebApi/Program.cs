@@ -17,6 +17,7 @@ builder.Services.AddAuthentication(builder.Configuration);
 builder.Services.AddFeature(builder.Configuration);
 builder.Services.AddSwagger();
 builder.Services.AddVersioning();
+builder.Services.AddMapper();
 //http://localhost:5000/healthchecks-ui#/healthchecks
 builder.Services.AddHealthCheck(builder.Configuration);
 //http://localhost:5000/watchdog

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceProject.Application.Feature.Categories;
+using EcommerceProject.Application.Feature.Common.Mappings;
 using EcommerceProject.Application.Feature.Customers;
 using EcommerceProject.Application.Feature.Discounts;
 using EcommerceProject.Application.Feature.Users;
@@ -24,6 +25,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
 using WatchDog;
 
 namespace EcommerceProject.Service.WebApi
@@ -58,7 +60,6 @@ namespace EcommerceProject.Service.WebApi
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<ICustomersApplication, CustomersApplication>();
             services.AddScoped<IUsersApplication, UsersApplication>();
             services.AddScoped<ICategoriesApplication, CategoriesApplication>();
@@ -68,6 +69,16 @@ namespace EcommerceProject.Service.WebApi
             services.AddTransient<DiscountDtoValidator>();
 
             return services;
+        }
+
+        public static void AddMapper(this IServiceCollection services)
+        {
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingsProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         public static void AddSwagger(this IServiceCollection services)
@@ -159,15 +170,24 @@ namespace EcommerceProject.Service.WebApi
                 });
         }
 
-        public static void AddFeature(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddFeature(this IServiceCollection services, IConfiguration configuration)
         {
             string myPolicy = "policyApiEcommerce";
+            
             var appSettingsSection = configuration.GetSection("Config");
             services.Configure<AppSettings>(appSettingsSection);
             var appSettings = appSettingsSection.Get<AppSettings>();
             services.AddCors(options => options.AddPolicy(myPolicy, builder => builder.WithOrigins(appSettings.OriginCors)
                                                                                    .AllowAnyHeader()
                                                                                    .AllowAnyMethod()));
+            services.AddMvc();
+            services.AddControllers().AddJsonOptions(opts =>
+            {
+                var EnumConverter = new JsonStringEnumConverter();
+                opts.JsonSerializerOptions.Converters.Add(EnumConverter);
+            });
+
+            return services;
         }
 
         public static IServiceCollection AddVersioning(this IServiceCollection services)
